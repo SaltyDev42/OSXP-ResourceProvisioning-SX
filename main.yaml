@@ -1,0 +1,11 @@
+---
+- name: "Example of provisioning resources"
+  hosts: all
+  become: yes
+  become_user: "{{ login }}"
+  tasks:
+  - name: "Copy something to {{ login }}"
+    copy:
+      src: "files/README.txt"
+      dest: "/home/{{ login }}/README.txt"
+
